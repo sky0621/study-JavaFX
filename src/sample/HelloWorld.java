@@ -4,19 +4,32 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class HelloWorld extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception{
-        Label message = new Label(("Hello JavaFX!"));
-        message.setFont(new Font(100));
+    public void start(Stage stage) throws Exception {
 
-        stage.setScene(new Scene(message));
-        stage.setTitle("HELLO");
+        // Component
+        Label label = new Label("This is JavaFX!");
+
+        // Pane
+        BorderPane bp = new BorderPane();
+        bp.setCenter(label);
+
+        // Scene
+        Scene sc = new Scene(bp, 320, 240);
+
+        // Stage
+        stage.setScene(sc);
+
         stage.show();
     }
 
